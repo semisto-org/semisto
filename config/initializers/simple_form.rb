@@ -1,8 +1,19 @@
+module SimpleForm
+  module Components
+    module Errors
+      def error(wrapper_options = nil)
+        # always load provided error message (for Foundation Abide validation)
+        error_text
+      end
+    end
+  end
+end
+
 # frozen_string_literal: true
 #
 # Uncomment this and change the path if necessary to include your own
 # components.
-# See https://github.com/heartcombo/simple_form#custom-components to know
+# See https://github.com/plataformatec/simple_form#custom-components to know
 # more about custom components.
 # Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
 #
@@ -53,9 +64,9 @@ SimpleForm.setup do |config|
 
     ## Inputs
     # b.use :input, class: 'input', error_class: 'is-invalid', valid_class: 'is-valid'
-    b.use :label_input
+    b.use :label_input, error_class: 'is-invalid-label'
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
-    b.use :error, wrap_with: { tag: :span, class: :error }
+    b.use :error, wrap_with: { tag: :span, class: 'error form-error' }
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
@@ -65,16 +76,16 @@ SimpleForm.setup do |config|
   end
 
   # The default wrapper to be used by the FormBuilder.
-  config.default_wrapper = :default
+  config.default_wrapper = :foundation
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
   #   inline: input + label
   #   nested: label > input
-  config.boolean_style = :nested
+  config.boolean_style = :inline
 
   # Default class for buttons
-  config.button_class = 'btn'
+  config.button_class = 'button'
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
@@ -85,7 +96,7 @@ SimpleForm.setup do |config|
   config.error_notification_tag = :div
 
   # CSS class to add for error notification helper.
-  config.error_notification_class = 'error_notification'
+  config.error_notification_class = 'alert callout form-validation-alert'
 
   # Series of attempts to detect a default label method for collection.
   # config.collection_label_methods = [ :to_label, :name, :title, :to_s ]
@@ -101,7 +112,7 @@ SimpleForm.setup do |config|
 
   # You can wrap each item in a collection of radio/check boxes with a tag,
   # defaulting to :span.
-  # config.item_wrapper_tag = :span
+  config.item_wrapper_tag = :div
 
   # You can define a class to use in all item wrappers. Defaulting to none.
   # config.item_wrapper_class = nil
@@ -110,7 +121,7 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  # config.label_class = nil
+  config.label_class = 'control-label'
 
   # You can define the default class to be used on forms. Can be overriden
   # with `html: { :class }`. Defaulting to none.
@@ -127,7 +138,10 @@ SimpleForm.setup do |config|
   # in this configuration, which is recommended due to some quirks from different browsers.
   # To stop SimpleForm from generating the novalidate option, enabling the HTML5 validations,
   # change this configuration to true.
-  config.browser_validations = false
+  config.browser_validations = true
+
+  # Collection of methods to detect if a file type was given.
+  # config.file_methods = [ :mounted_as, :file?, :public_filename, :attached? ]
 
   # Custom mappings for input types. This should be a hash containing a regexp
   # to match as key, and the input type that will be used when the field name
@@ -137,6 +151,10 @@ SimpleForm.setup do |config|
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
   # config.wrapper_mappings = { string: :prepend }
+  config.wrapper_mappings = {
+    check_boxes: :foundation_checkbox,
+    radio_buttons: :foundation_radio_buttons
+  }
 
   # Namespaces where SimpleForm should look for custom input classes that
   # override default inputs.
@@ -152,7 +170,7 @@ SimpleForm.setup do |config|
   # config.translate_labels = true
 
   # Automatically discover new inputs in Rails' autoload path.
-  # config.inputs_discovery = true
+  config.inputs_discovery = true
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?
@@ -173,4 +191,160 @@ SimpleForm.setup do |config|
   # Defines validation classes to the input_field. By default it's nil.
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
+
+  config.wrappers :foundation, tag: 'div', class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.use :placeholder
+    b.wrapper tag: :label, error_class: 'is-invalid-label' do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: "label-text" }
+      ba.use :hint,  wrap_with: { tag: :div, class: "help-text" }
+      ba.use :input
+      ba.use :error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
+    end
+  end
+
+  config.wrappers :foundation_pickadate, tag: 'div', class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.use :placeholder
+    b.wrapper tag: :label, error_class: 'is-invalid-label' do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: "label-text" }
+      ba.use :hint,  wrap_with: { tag: :p, class: "help-text" }
+      ba.use :input
+      ba.use :error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
+    end
+    b.wrapper tag: :div, class: "pickadate-container" do; end
+  end
+
+  config.wrappers :foundation_append, tag: 'div', class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.use :placeholder
+    b.wrapper tag: :label, error_class: 'is-invalid-label' do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: "label-text" }
+      ba.wrapper tag: :div, class: "input-group" do |append|
+        append.use :input
+      end
+      ba.use :error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
+      ba.use :hint,  wrap_with: { tag: :p, class: 'help-text' }
+    end
+  end
+
+  config.wrappers :foundation_pickadate, tag: 'div', class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.use :placeholder
+    b.wrapper tag: :label, error_class: 'is-invalid-label' do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: "label-text" }
+      ba.use :hint,  wrap_with: { tag: :p, class: "help-text" }
+      ba.use :input
+      ba.use :error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
+    end
+    b.wrapper tag: :div, class: "pickadate-container" do; end
+  end
+
+  config.wrappers :foundation_wysiwyg, tag: 'div', class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.use :placeholder
+    b.wrapper tag: :label, error_class: 'is-invalid-label' do |ba|
+      ba.optional :label, wrap_with: { tag: :span, class: 'label-text' }
+      ba.use :hint,  wrap_with: { tag: :p, class: 'help-text' }
+    # end
+    # b.wrapper tag: :div, error_class: 'is-invalid-label' do |ba|
+      ba.use :input
+      ba.use :error, wrap_with: { tag: :span, class: 'form-error animated fadeInDown' }
+    end
+  end
+
+  config.wrappers :foundation_checkbox, class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.optional :readonly
+
+    b.wrapper tag: :label do |ba|
+      ba.wrapper tag: :div, class: 'grid-x' do |bb|
+        bb.wrapper tag: :div, class: 'cell shrink' do |bc|
+          bc.use :input
+          bc.wrapper tag: :span, class: 'custom-checkbox' do |bd|
+          end
+        end
+        bb.wrapper tag: :div, class: 'cell auto' do |bc|
+          bc.use :label_text, wrap_with: { tag: :span, class: 'checkbox-label' }
+          bc.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
+          bc.use :hint, wrap_with: { tag: :p, class: 'help-text' }
+        end
+      end
+    end
+  end
+
+  config.wrappers :foundation_switch, class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.optional :readonly
+
+    b.wrapper tag: :label do |ba|
+      ba.wrapper tag: :div, class: 'grid-x row align-top' do |bb|
+        bb.wrapper tag: :div, class: 'cell shrink columns' do |bc|
+          bc.wrapper tag: :div, class: 'switch' do |bd|
+            bd.use :input, class: 'switch-input'
+            bd.use :label, class: 'switch-paddle'
+            # not working on Edge:
+            # bd.wrapper tag: :label, class: 'switch-paddle' do |be|
+            #   be.use :label_text, wrap_with: { tag: :span, class: 'show-for-sr' }
+            # end
+          end
+        end
+        bb.wrapper tag: :div, class: 'cell auto columns switch-label' do |bc|
+          bc.use :label_text
+          bc.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
+          bc.use :hint, wrap_with: { tag: :p, class: 'help-text' }
+        end
+      end
+    end
+  end
+
+  config.wrappers :foundation_segmented_selector, class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.optional :readonly
+
+    b.wrapper tag: :label do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: 'label-text' }
+      ba.wrapper tag: :ul, class: 'segmented-control' do |segmented_control|
+        segmented_control.use :input
+      end
+      ba.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
+      ba.use :hint, wrap_with: { tag: :p, class: 'help-text' }
+    end
+  end
+
+  config.wrappers :foundation_radio_buttons, class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.optional :readonly
+
+    b.wrapper tag: :label do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: 'label-text' }
+      ba.use :hint, wrap_with: { tag: :p, class: 'help-text' }
+    end
+    b.use :input
+    b.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
+  end
+
+  config.wrappers :segmented_selector, class: 'field' do |b|
+    b.use :html5
+    b.optional :pattern
+    b.optional :readonly
+
+    b.wrapper tag: :label do |ba|
+      ba.use :label_text, wrap_with: { tag: :span, class: 'label-text' }
+      ba.wrapper tag: :ul, class: 'segmented-control' do |segmented_control|
+        segmented_control.use :input
+      end
+      ba.use :error, wrap_with: { tag: :small, class: 'form-error animated fadeInDown' }
+      ba.use :hint, wrap_with: { tag: :p, class: 'help-text' }
+    end
+  end
 end

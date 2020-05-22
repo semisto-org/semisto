@@ -1,0 +1,2 @@
+class Forest < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Forests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forests.each do |forest| %>
+      <tr>
+        <td><%= forest.name %></td>
+        <td><%= link_to 'Show', forest %></td>
+        <td><%= link_to 'Edit', edit_forest_path(forest) %></td>
+        <td><%= link_to 'Destroy', forest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forest', new_forest_path %>

@@ -26,3 +26,409 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 43ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 2541)
 
 
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200522214506)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (105.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200522214506"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200522214506)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (45.5ms)[0m  [1m[35mDROP INDEX  "index_users_on_reset_password_token"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP INDEX  "index_users_on_email"[0m
+  [1m[35m (7.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200522214506"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200522214506)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (47.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying DEFAULT '' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200522214506"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200522214506)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.1ms)[0m  [1m[35mDROP INDEX  "index_users_on_reset_password_token"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP INDEX  "index_users_on_email"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200522214506"]]
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200522214506)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (37.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying DEFAULT '' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200522214506"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/" for 127.0.0.1 at 2020-05-22 23:50:58 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActionController::RoutingError - uninitialized constant ForestsController:
+
+Started POST "/__better_errors/822d30f4c725a897/variables" for 127.0.0.1 at 2020-05-22 23:50:58 +0200
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/" for 127.0.0.1 at 2020-05-22 23:52:19 +0200
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/0323adcaf724de03/variables" for 127.0.0.1 at 2020-05-22 23:52:20 +0200
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateForests (20200522215154)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (97.3ms)[0m  [1m[35mCREATE TABLE "forests" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200522215154"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/" for 127.0.0.1 at 2020-05-22 23:52:46 +0200
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForestsController#index as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms | Allocations: 1839)
+
+
+
+NoMethodError - undefined method `map' for :username:Symbol
+Did you mean?  tap:
+
+Started POST "/__better_errors/76eac2e996135624/variables" for 127.0.0.1 at 2020-05-22 23:52:46 +0200
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/" for 127.0.0.1 at 2020-05-22 23:53:23 +0200
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForestsController#index as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms | Allocations: 1311)
+
+
+
+FastGettext::Storage::NoTextDomainConfigured - Current textdomain (nil) was not added, use FastGettext.add_text_domain !:
+
+Started POST "/__better_errors/aad242064add4c4e/variables" for 127.0.0.1 at 2020-05-22 23:53:23 +0200
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/" for 127.0.0.1 at 2020-05-22 23:58:16 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForestsController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms | Allocations: 1320)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-22 23:58:17 +0200
+Processing by Devise::SessionsController#new as HTML
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 11.1ms | Allocations: 11173)
+
+
+
+ActionView::MissingTemplate - Missing template layouts/devise with {:locale=>[:fr, :en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :slim, :jbuilder]}. Searched in:
+  * "/Users/michael/Code/edible-forest-manager/app/views"
+  * "/Users/michael/.asdf/installs/ruby/2.6.5/lib/ruby/gems/2.6.0/gems/devise-4.7.1/app/views"
+  * "/Users/michael/.asdf/installs/ruby/2.6.5/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.1/app/views"
+  * "/Users/michael/.asdf/installs/ruby/2.6.5/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.1/app/views"
+:
+
+Started POST "/__better_errors/2bc9a592f035c5c7/variables" for 127.0.0.1 at 2020-05-22 23:58:17 +0200
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-22 23:59:29 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 623)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 263.3ms | Allocations: 27074)
+  Rendered layouts/components/_messages.html.slim (Duration: 37.9ms | Allocations: 5840)
+Completed 200 OK in 362ms (Views: 361.1ms | ActiveRecord: 0.0ms | Allocations: 48538)
+
+
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:01:27 +0200
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 618)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 166.2ms | Allocations: 21974)
+  Rendered layouts/components/_messages.html.slim (Duration: 5.5ms | Allocations: 5822)
+Completed 200 OK in 312ms (Views: 231.9ms | ActiveRecord: 28.4ms | Allocations: 50755)
+
+
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:07:54 +0200
+  [1m[35m (41.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 623)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 116.0ms | Allocations: 20501)
+  Rendered layouts/components/_messages.html.slim (Duration: 9.5ms | Allocations: 5822)
+Completed 200 OK in 265ms (Views: 194.5ms | ActiveRecord: 18.5ms | Allocations: 49280)
+
+
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:10:32 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 7.8ms | Allocations: 623)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 100.4ms | Allocations: 20502)
+  Rendered layouts/components/_messages.html.slim (Duration: 47.8ms | Allocations: 5816)
+Completed 200 OK in 253ms (Views: 224.5ms | ActiveRecord: 6.9ms | Allocations: 49283)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:11:05 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 27.3ms | Allocations: 9029)
+  Rendered layouts/components/_messages.html.slim (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.0ms | Allocations: 10531)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-05-23 00:11:08 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 125)
+  Rendered devise/registrations/new.html.erb within layouts/devise (Duration: 20.5ms | Allocations: 7831)
+  Rendered layouts/components/_messages.html.slim (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 9706)
+
+
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[36mUser Exists? (126.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "michael@hulet.eu"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "michael@hulet.eu"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "michael"], ["email", "michael@hulet.eu"], ["encrypted_password", "$2a$11$WD06ID20fcQEb/SLn.FJxuWh.tN1jd7.COL3kEJ9D/7ExY7IpydYC"], ["created_at", "2020-05-22 22:11:50.152380"], ["updated_at", "2020-05-22 22:11:50.152380"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:11:54 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 23.4ms | Allocations: 9013)
+  Rendered layouts/components/_messages.html.slim (Duration: 0.1ms | Allocations: 19)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 10508)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:12:16 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 523)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 42.1ms | Allocations: 9957)
+  Rendered layouts/components/_messages.html.slim (Duration: 11.9ms | Allocations: 5797)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.0ms | Allocations: 23493)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-23 00:12:21 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Fc8TQcmF/XShndSKc7gPLt2r7KeZnxQFZ3tLfrag9m/Mh0Ht+7FEl319fJkqqvq8WEWlgp94/nSuJuEOVeom/Q==", "user"=>{"username"=>"michael", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "michael"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `set_raven_context'
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 4.0ms | Allocations: 5331)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-23 00:12:21 +0200
+Processing by ForestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/index.html.erb within layouts/application
+  [1m[36mForest Load (2.3ms)[0m  [1m[34mSELECT "forests".* FROM "forests"[0m
+  ↳ app/views/forests/index.html.erb:14
+  Rendered forests/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1232)
+Completed 200 OK in 1907ms (Views: 1891.6ms | ActiveRecord: 8.0ms | Allocations: 1499891)
+
+
+Started GET "/forests/new" for 127.0.0.1 at 2020-05-23 00:12:26 +0200
+Processing by ForestsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/new.html.erb within layouts/application
+  Rendered forests/_form.html.erb (Duration: 13.8ms | Allocations: 3942)
+  Rendered forests/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 4301)
+Completed 200 OK in 47ms (Views: 26.0ms | ActiveRecord: 8.5ms | Allocations: 12979)
+
+
+Started POST "/forests" for 127.0.0.1 at 2020-05-23 00:12:32 +0200
+Processing by ForestsController#create as HTML
+  Parameters: {"authenticity_token"=>"G09nlZgfcEy0k5nirF/6uueYMMqNVl2hX7lBSCjKFSsLIiUCYLo+gpYjCgFP/pvou0aBNgjPFWFtovuyJ0Ag+A==", "forest"=>{"name"=>"Bolinne"}, "commit"=>"Create Forest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/forests_controller.rb:30:in `block in create'
+  [1m[36mForest Create (221.5ms)[0m  [1m[32mINSERT INTO "forests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bolinne"], ["created_at", "2020-05-22 22:12:32.084128"], ["updated_at", "2020-05-22 22:12:32.084128"]]
+  ↳ app/controllers/forests_controller.rb:30:in `block in create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/forests_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/forests/1
+Completed 302 Found in 232ms (ActiveRecord: 224.3ms | Allocations: 4826)
+
+
+Started GET "/forests/1" for 127.0.0.1 at 2020-05-23 00:12:32 +0200
+Processing by ForestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mForest Load (0.6ms)[0m  [1m[34mSELECT "forests".* FROM "forests" WHERE "forests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/forests_controller.rb:67:in `set_forest'
+  Rendering forests/show.html.erb within layouts/application
+  Rendered forests/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 231)
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 1.2ms | Allocations: 7038)
+
+
+Started GET "/forests" for 127.0.0.1 at 2020-05-23 00:12:35 +0200
+Processing by ForestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/index.html.erb within layouts/application
+  [1m[36mForest Load (0.5ms)[0m  [1m[34mSELECT "forests".* FROM "forests"[0m
+  ↳ app/views/forests/index.html.erb:14
+  Rendered forests/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 817)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 1.0ms | Allocations: 6755)
+
+
+Started GET "/forests/1" for 127.0.0.1 at 2020-05-23 00:12:38 +0200
+Processing by ForestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mForest Load (0.5ms)[0m  [1m[34mSELECT "forests".* FROM "forests" WHERE "forests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/forests_controller.rb:67:in `set_forest'
+  Rendering forests/show.html.erb within layouts/application
+  Rendered forests/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 75)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 1.1ms | Allocations: 6614)
+
+
+Started GET "/forests" for 127.0.0.1 at 2020-05-23 00:12:40 +0200
+Processing by ForestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/index.html.erb within layouts/application
+  [1m[36mForest Load (1.3ms)[0m  [1m[34mSELECT "forests".* FROM "forests"[0m
+  ↳ app/views/forests/index.html.erb:14
+  Rendered forests/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 812)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 1.8ms | Allocations: 6762)
+
+
+Started GET "/forests/1/edit" for 127.0.0.1 at 2020-05-23 00:12:44 +0200
+Processing by ForestsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mForest Load (53.6ms)[0m  [1m[34mSELECT "forests".* FROM "forests" WHERE "forests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/forests_controller.rb:67:in `set_forest'
+  Rendering forests/edit.html.erb within layouts/application
+  Rendered forests/_form.html.erb (Duration: 9.2ms | Allocations: 3554)
+  Rendered forests/edit.html.erb within layouts/application (Duration: 11.7ms | Allocations: 3810)
+Completed 200 OK in 93ms (Views: 27.1ms | ActiveRecord: 55.8ms | Allocations: 10461)
+
+
+Started PATCH "/forests/1" for 127.0.0.1 at 2020-05-23 00:12:45 +0200
+Processing by ForestsController#update as HTML
+  Parameters: {"authenticity_token"=>"TxDxhvkMRSQ85vAWkgWnxKli01kEVcVvg1nG9nEOs3X/qX/P968g/FByY8vMOqXvDYmWl8UxdHk9kEe0ZGDeaw==", "forest"=>{"name"=>"Bolinne"}, "commit"=>"Update Forest", "id"=>"1"}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mForest Load (0.5ms)[0m  [1m[34mSELECT "forests".* FROM "forests" WHERE "forests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/forests_controller.rb:67:in `set_forest'
+Redirected to http://localhost:3000/forests/1
+Completed 302 Found in 16ms (ActiveRecord: 9.8ms | Allocations: 3039)
+
+
+Started GET "/forests/1" for 127.0.0.1 at 2020-05-23 00:12:45 +0200
+Processing by ForestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mForest Load (0.4ms)[0m  [1m[34mSELECT "forests".* FROM "forests" WHERE "forests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/forests_controller.rb:67:in `set_forest'
+  Rendering forests/show.html.erb within layouts/application
+  Rendered forests/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 78)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.9ms | Allocations: 6627)
+
+
+Started GET "/forests" for 127.0.0.1 at 2020-05-23 00:12:47 +0200
+Processing by ForestsController#index as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/index.html.erb within layouts/application
+  [1m[36mForest Load (1.8ms)[0m  [1m[34mSELECT "forests".* FROM "forests"[0m
+  ↳ app/views/forests/index.html.erb:14
+  Rendered forests/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 813)
+Completed 200 OK in 28ms (Views: 14.8ms | ActiveRecord: 8.0ms | Allocations: 6764)
+
+
+Started GET "/forests/new" for 127.0.0.1 at 2020-05-23 00:12:55 +0200
+Processing by ForestsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/new.html.erb within layouts/application
+  Rendered forests/_form.html.erb (Duration: 8.7ms | Allocations: 3485)
+  Rendered forests/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3578)
+Completed 200 OK in 27ms (Views: 19.9ms | ActiveRecord: 2.8ms | Allocations: 9520)
+
+
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/forests/new" for 127.0.0.1 at 2020-05-23 00:14:06 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ForestsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/new.html.erb within layouts/application
+  Rendered forests/_form.html.erb (Duration: 80.5ms | Allocations: 13265)
+  Rendered forests/new.html.erb within layouts/application (Duration: 84.7ms | Allocations: 13746)
+Completed 200 OK in 1649ms (Views: 1564.6ms | ActiveRecord: 15.1ms | Allocations: 1504093)
+
+
+Started GET "/forests" for 127.0.0.1 at 2020-05-23 00:14:12 +0200
+Processing by ForestsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering forests/index.html.erb within layouts/application
+  [1m[36mForest Load (0.8ms)[0m  [1m[34mSELECT "forests".* FROM "forests"[0m
+  ↳ app/views/forests/index.html.erb:14
+  Rendered forests/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1090)
+Completed 200 OK in 17ms (Views: 9.5ms | ActiveRecord: 2.8ms | Allocations: 7325)
+
+

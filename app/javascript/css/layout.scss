@@ -1,0 +1,12 @@
+.spacer {
+  &--vertical {
+    height: 1px;
+
+    &--2 { margin-bottom: 1rem; }
+    &--1 { margin-bottom: 2rem; }
+    &--3 { margin-bottom: 3rem; }
+  }
+}
+
+.no-margin-top { margin-top: 0 !important; }
+.no-margin-bottom { margin-bottom: 0 !important; }
