@@ -432,3 +432,86 @@ Processing by ForestsController#index as HTML
 Completed 200 OK in 17ms (Views: 9.5ms | ActiveRecord: 2.8ms | Allocations: 7325)
 
 
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+Started GET "/plants" for 127.0.0.1 at 2020-05-23 11:50:22 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/7a0094ae2eb1649c/variables" for 127.0.0.1 at 2020-05-23 11:50:22 +0200
+Raven 3.0.0 configured not to capture errors: No host specified, no public_key specified, no project_id specified
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1412014202000817135)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlants (20200523094808)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (179.6ms)[0m  [1m[35mCREATE TABLE "plants" ("id" bigserial primary key, "name" character varying, "common_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200523094808"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFamilies (20200523094839)
+  [1m[35m (39.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "families" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200523094839"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1412014202000817135)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/plants" for 127.0.0.1 at 2020-05-23 11:51:06 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.9ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/views/plants/index.html.erb:15
+  Rendered plants/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1297)
+Completed 200 OK in 102ms (Views: 62.3ms | ActiveRecord: 17.9ms | Allocations: 23307)
+
+
+Started GET "/plants/new" for 127.0.0.1 at 2020-05-23 11:51:09 +0200
+Processing by PlantsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plants/new.html.erb within layouts/application
+  Rendered plants/_form.html.erb (Duration: 8.1ms | Allocations: 4711)
+  Rendered plants/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 5062)
+Completed 200 OK in 34ms (Views: 17.4ms | ActiveRecord: 8.6ms | Allocations: 15987)
+
+
+Started POST "/plants" for 127.0.0.1 at 2020-05-23 11:51:27 +0200
+Processing by PlantsController#create as HTML
+  Parameters: {"authenticity_token"=>"Nm4N/rLLXQIqssIM+7qt9fqMDInL9VC6DULkLMwaBWz8G0p7I92rjtDuZ8/Yb7oeS4WnBpKCnrjlB10YVRqZZg==", "plant"=>{"name"=>"Staphylea colchica - Stev.", "common_name"=>"Bladdernut"}, "commit"=>"Create Plant"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:30:in `block in create'
+  [1m[36mPlant Create (2.0ms)[0m  [1m[32mINSERT INTO "plants" ("name", "common_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Staphylea colchica - Stev."], ["common_name", "Bladdernut"], ["created_at", "2020-05-23 09:51:27.510969"], ["updated_at", "2020-05-23 09:51:27.510969"]]
+  ↳ app/controllers/plants_controller.rb:30:in `block in create'
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/plants/1
+Completed 302 Found in 27ms (ActiveRecord: 6.6ms | Allocations: 4879)
+
+
+Started GET "/plants/1" for 127.0.0.1 at 2020-05-23 11:51:27 +0200
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:67:in `set_plant'
+  Rendering plants/show.html.erb within layouts/application
+  Rendered plants/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 256)
+Completed 200 OK in 35ms (Views: 21.5ms | ActiveRecord: 3.2ms | Allocations: 8742)
+
+
+Started GET "/plants" for 127.0.0.1 at 2020-05-23 11:51:29 +0200
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plants/index.html.erb within layouts/application
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/views/plants/index.html.erb:15
+  Rendered plants/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 823)
+Completed 200 OK in 74ms (Views: 13.4ms | ActiveRecord: 0.9ms | Allocations: 8456)
+
+
