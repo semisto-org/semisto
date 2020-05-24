@@ -1,6 +1,14 @@
 module SimpleForm
   module Components
     module Errors
+      # def has_errors?
+      #   has_custom_error? || (object && object.respond_to?(:errors) && errors.present?)
+      # end
+      #
+      # def errors
+      #   @errors ||= has_custom_error? ? [options[:error]] : (errors_on_attribute + errors_on_association).compact
+      # end
+
       def error(wrapper_options = nil)
         # always load provided error message (for Foundation Abide validation)
         error_text
@@ -8,6 +16,14 @@ module SimpleForm
     end
   end
 end
+
+# module SimpleForm
+#   class ErrorNotification
+#     def has_errors?
+#       @options[:errors] || (object && object.respond_to?(:errors) && errors.present?)
+#     end
+#   end
+# end
 
 # frozen_string_literal: true
 #
@@ -72,7 +88,7 @@ SimpleForm.setup do |config|
     # If you want to display the full error message for the attribute, you can
     # use the component :full_error, like:
     #
-    # b.use :full_error, wrap_with: { tag: :span, class: :error }
+    b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
 
   # The default wrapper to be used by the FormBuilder.

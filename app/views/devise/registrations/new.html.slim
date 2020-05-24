@@ -1,0 +1,32 @@
+- content_for :page_title, _("Sign up")
+
+- content_for :header do
+  h2 = _("Get started with Silvaners.org")
+
+.card
+  .card-section
+    = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+      = f.error_notification
+
+      = f.input :username,
+                required: true,
+                autofocus: true,
+                label: _("Username"),
+                input_html: { autocomplete: "username" }
+
+      = f.object.errors.full_messages_for(:email).to_sentence
+      = f.input :email,
+                required: true,
+                label: _("Email Address"),
+                input_html: { autocomplete: "email" },
+                error: f.object.errors.full_messages_for(:email).to_sentence
+
+      = f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                label: _("Choose a Password"),
+                input_html: { autocomplete: "new-password" }
+
+      = f.button :submit, _("Sign Up")
+
+= render "devise/shared/links"

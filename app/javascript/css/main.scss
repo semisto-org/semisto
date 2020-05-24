@@ -42,3 +42,7 @@
 @include foundation-flex-classes;
 
 @import './layout';
+
+@import './components/form';
+
+@include silvaners-form;

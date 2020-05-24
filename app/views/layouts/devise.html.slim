@@ -3,16 +3,24 @@ html(lang="#{I18n.locale}")
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    title Edible Forest Manager
+    title
+      => yield :page_title
+      | &bull; Silvaners.org
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
   body
     .grid-container
       .grid-x
         .cell.small-12.medium-8.large-6.medium-offset-2.large-offset-3
-          .spacer-2
+          .spacer--vertical--2
+
+          = yield :header
+
           = render "layouts/components/messages"
 
           = yield
+
+          .spacer--vertical--3

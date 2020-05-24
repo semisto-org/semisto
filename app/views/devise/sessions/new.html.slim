@@ -1,0 +1,28 @@
+- content_for :page_title, _("Log in")
+
+- content_for :header do
+  h2 = _("Welcome, silvaner.")
+
+.card
+  .card-section
+    = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+      = f.input :login,
+                required: false,
+                autofocus: true,
+                label: _("Username"),
+                input_html: { autocomplete: "username" }
+
+      = f.input :password,
+                required: false,
+                label: _("Password"),
+                input_html: { autocomplete: "current-password" }
+
+      = f.input :remember_me,
+                as: :boolean,
+                wrapper: :foundation_checkbox,
+                label: _("Remember me"),
+                required: false if devise_mapping.rememberable?
+
+      = f.button :submit, _("Log In")
+
+= render "devise/shared/links"
