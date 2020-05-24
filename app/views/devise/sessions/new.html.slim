@@ -5,16 +5,21 @@
 
 .card
   .card-section
-    = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+    = simple_form_for resource,
+                      as: resource_name,
+                      url: session_path(resource_name),
+                      data: { abide: true } do |f|
       = f.input :login,
-                required: false,
+                required: true,
                 autofocus: true,
                 label: _("Username"),
-                input_html: { autocomplete: "username" }
+                input_html: { autocomplete: "username" },
+                error: _("Please provide your username or email")
 
       = f.input :password,
-                required: false,
+                required: true,
                 label: _("Password"),
+                error: _("Please provide your password"),
                 input_html: { autocomplete: "current-password" }
 
       = f.input :remember_me,

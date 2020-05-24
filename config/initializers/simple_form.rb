@@ -206,7 +206,7 @@ SimpleForm.setup do |config|
 
   # Defines validation classes to the input_field. By default it's nil.
   # config.input_field_valid_class = 'is-valid'
-  # config.input_field_error_class = 'is-invalid'
+  config.input_field_error_class = 'is-invalid-input'
 
   config.wrappers :foundation, tag: 'div', class: 'field' do |b|
     b.use :html5
@@ -216,7 +216,7 @@ SimpleForm.setup do |config|
       ba.use :label_text, wrap_with: { tag: :span, class: "label-text" }
       ba.use :hint,  wrap_with: { tag: :div, class: "help-text" }
       ba.use :input
-      ba.use :error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
+      ba.use :full_error, wrap_with: { tag: :span, class: "form-error animated fadeInDown" }
     end
   end
 
