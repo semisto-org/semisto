@@ -1,0 +1,7 @@
+h1 = @forest.name
+
+#map(data-controller="map" data-target="map.map" data-map-token="#{ENV['MAPBOX_TOKEN']}" data-map-latitude="#{@forest.latitude}" data-map-longitude="#{@forest.longitude}" style="width: 100%; height: 20rem")
+
+ul
+  li = link_to _("Edit"), edit_forest_path(@forest)
+  li = link_to _("Back"), forests_path

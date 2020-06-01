@@ -8,6 +8,7 @@
     "@rails/webpacker": "4.2.2",
     "foundation-sites": "6.6.3",
     "jquery": "^3.5.0",
+    "leaflet": "^1.6.0",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0"
   },
