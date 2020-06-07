@@ -1,3 +1,16 @@
+body {
+  overflow: hidden;
+}
+
+.header {
+  background: $color-dark-gray;
+  color: $white;
+}
+
+.sidebar {
+  background: $color-light-gray;
+}
+
 .spacer {
   &--vertical {
     height: 1px;

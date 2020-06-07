@@ -1,0 +1,14 @@
+doctype html
+html(lang="#{I18n.locale}")
+  head
+    = render "layouts/components/head"
+
+  body(data-controller="#{yield(:body_controller)}" class="controller--#{controller_name} action--#{action_name}")
+    .grid-y.medium-grid-frame
+      .cell.medium-auto.medium-cell-block-container
+        .grid-x.grid-padding-x
+          .cell.medium-2.medium-cell-block-y.sidebar
+            ul.vertical.menu
+              li = link_to _("Log out"), destroy_user_session_path, method: :delete
+          .cell.medium-10.medium-cell-block-y
+            = yield

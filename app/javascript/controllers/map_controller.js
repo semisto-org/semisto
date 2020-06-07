@@ -18,13 +18,16 @@ export default class extends Controller {
 
     this.map.on(L.Draw.Event.CREATED, function(event) {
       console.log('object created')
-      var layer = event.layer;
+      var layer = event.layer
       _this.drawnItems.addLayer(layer)
       console.log(_this.drawnItems.toGeoJSON())
       console.log('layer', layer)
 
       let formData = new FormData()
-      formData.append("forest[drawn_items]", JSON.stringify(_this.drawnItems.toGeoJSON()))
+      formData.append(
+        "forest[drawn_items]",
+        JSON.stringify(_this.drawnItems.toGeoJSON())
+      )
 
       Rails.ajax({
         url: _this.data.get('update-url'),
