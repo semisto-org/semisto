@@ -1,4 +1,8 @@
-title Silvaners.org
+title
+  - breadcrumb_trail.reverse_each do |name, url, current|
+    | #{name} &#9702;&nbsp;
+  | Silvaners.org
+
 = csrf_meta_tags
 = csp_meta_tag
 
