@@ -2,13 +2,18 @@ body {
   overflow: hidden;
 }
 
-.header {
-  background: $color-dark-gray;
-  color: $white;
-}
+.layout {
+  &--header {
+    padding-top: $global-padding;
+  }
 
-.sidebar {
-  background: $color-light-gray;
+  &--sidebar {
+    background: $color-blue;
+  }
+
+  &--main {
+    padding-bottom: $global-padding;
+  }
 }
 
 .spacer {

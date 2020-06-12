@@ -7,8 +7,21 @@ html(lang="#{I18n.locale}")
     .grid-y.medium-grid-frame
       .cell.medium-auto.medium-cell-block-container
         .grid-x.grid-padding-x
-          .cell.medium-2.medium-cell-block-y.sidebar
+          .cell.medium-2.medium-cell-block-y.layout--sidebar
             ul.vertical.menu
               li = link_to _("Log out"), destroy_user_session_path, method: :delete
           .cell.medium-10.medium-cell-block-y
-            = yield
+            .layout--header
+              = yield :header
+              = yield :breadcrumbs
+
+              - if breadcrumb_trail.count > 1  #do not change count to size - fails with nil
+                #breadcrumbs
+                  nav
+                    ul.breadcrumbs
+                      - breadcrumb_trail do |crumb|
+                        li.breadcrumb-item(class="#{crumb.current? ? 'active' : ''}")
+                          = link_to_unless crumb.current?, crumb.name, crumb.url, (crumb.current? ? {'aria-current' => 'page'} : {})
+
+            .layout--main
+              = yield

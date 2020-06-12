@@ -117,7 +117,7 @@ export default class extends Controller {
   get drawnItems() {
     if (this._drawnItems == undefined) {
       this._drawnItems = new L.FeatureGroup()
-      if (this.data.get('drawn-items') != null) {
+      if (this.data.get('drawn-items') !== '') {
         L.geoJSON(JSON.parse(this.data.get('drawn-items'))).addTo(this._drawnItems)
       }
     }
@@ -126,10 +126,17 @@ export default class extends Controller {
 
   get map() {
     if (this._map == undefined && this.hasMapTarget) {
-      this._map = L.map('map', {
-        center: [this.data.get('latitude'), this.data.get('longitude')],
-        zoom: 17
-      });
+      if (this.data.get('latitude')) {
+        this._map = L.map('map', {
+          center: [this.data.get('latitude'), this.data.get('longitude')],
+          zoom: 17
+        });
+      } else {
+        this._map = L.map('map', {
+          center: [0.0, 0.0],
+          zoom: 4
+        });
+      }
     }
     return this._map
   }

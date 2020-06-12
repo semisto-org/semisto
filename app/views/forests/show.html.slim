@@ -1,7 +1,21 @@
 h1 = @forest.name
 
+h2 = _("Map")
+
 #map(data-controller="map" data-target="map.map" data-map-token="#{ENV['MAPBOX_TOKEN']}" data-map-latitude="#{@forest.latitude}" data-map-longitude="#{@forest.longitude}" data-map-update-url="#{forest_url(@forest)}" data-map-drawn-items="#{@forest.drawn_items}" style="width: 100%; height: 30rem")
 
+h2 = _("Plants")
+
+- if @forest.plants.any?
+  ul
+    - @forest.plants.each do |plant|
+      li = link_to plant.name, forest_plant_path(@forest, plant)
+
+div
+  = link_to "Add plant",
+            new_forest_plant_path(@forest),
+            class: "button button--new"
+
 ul
-  li = link_to _("Edit"), edit_forest_path(@forest)
+  li = link_to _("Edit Forest"), edit_forest_path(@forest)
   li = link_to _("Back"), forests_path

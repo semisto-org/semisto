@@ -1,0 +1,12 @@
+- content_for :breadcrumbs do
+  - breadcrumb "Forests", forests_path
+  - breadcrumb @forest.name, forest_path(@forest)
+  - breadcrumb "Add plant", new_forest_plant_path(@forest)
+
+- content_for :header do
+  h1 = _("Add plant")
+
+= simple_form_for @plant,
+                  url: forest_plants_path do |f|
+  = render "form", f: f
+  = f.button :submit

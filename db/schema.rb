@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_153034) do
+ActiveRecord::Schema.define(version: 2020_06_12_152310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_153034) do
     t.string "common_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "forest_id", null: false
+    t.index ["forest_id"], name: "index_plants_on_forest_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +53,5 @@ ActiveRecord::Schema.define(version: 2020_06_07_153034) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "plants", "forests"
 end

@@ -1,3 +1,6 @@
+meta(charset="utf-8")
+meta(name="viewport" content="width=device-width, initial-scale=1")
+
 title
   - breadcrumb_trail.reverse_each do |name, url, current|
     | #{name} &#9702;&nbsp;
@@ -8,3 +11,5 @@ title
 
 = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
 = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+= yield :head

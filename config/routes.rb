@@ -6,8 +6,9 @@ Rails.application.routes.draw do
              path_names: { sign_in: "login", sign_up: "signup", sign_out: "logout", password: "password", unlock: "unlock" }
 
   resources :families
-  resources :plants
-  resources :forests
+  resources :forests do
+    resources :plants
+  end
 
   root to: "forests#index"
 end

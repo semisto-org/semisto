@@ -14,7 +14,8 @@ class PlantsController < ApplicationController
 
   # GET /plants/new
   def new
-    @plant = Plant.new
+    @forest = Forest.find(params[:forest_id])
+    @plant = @forest.plants.new
   end
 
   # GET /plants/1/edit
@@ -24,7 +25,8 @@ class PlantsController < ApplicationController
   # POST /plants
   # POST /plants.json
   def create
-    @plant = Plant.new(plant_params)
+    @forest = Forest.find(params[:forest_id])
+    @plant = @forest.plants.new(plant_params)
 
     respond_to do |format|
       if @plant.save

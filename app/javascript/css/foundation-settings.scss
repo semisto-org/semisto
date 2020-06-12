@@ -74,7 +74,7 @@ $foundation-palette: (
   success: $color-success,
   warning: $color-warning,
   alert: $color-alert,
-  info: $color-light-blue
+  info: $color-blue
 );
 $light-gray: $color-light-gray;
 $medium-gray: $color-medium-gray;
@@ -131,7 +131,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Bad Script', cursive;
 $header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -253,7 +253,7 @@ $accordionmenu-arrow-size: 6px;
 // 9. Badge
 // --------
 
-$badge-background: $color-lemon;
+$badge-background: $color-purple;
 $badge-color: $black;
 $badge-color-alt: $white;
 $badge-palette: $foundation-palette;
