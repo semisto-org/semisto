@@ -12,7 +12,7 @@ h2 = _("Plants")
       li = link_to plant.name, forest_plant_path(@forest, plant)
 
 div
-  = link_to "Add plant",
+  = link_to _("Add plant"),
             new_forest_plant_path(@forest),
             class: "button button--new"
 
