@@ -5,22 +5,28 @@ html(lang="#{I18n.locale}")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title
       => yield :page_title
-      | &bull; Silvaners.org
+      | &bull; Semisto.org
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body(data-controller="foundation")
-    .grid-container
-      .grid-x
-        .cell.small-12.medium-8.large-6.medium-offset-2.large-offset-3
-          .spacer--vertical--2
+    section.auth
+      .grid-x.grid-padding-x.align-center
+        .cell.small-12.medium-8.large-4
+          .auth__header
+            .auth__header__logo
+              = image_tag("logo-semisto-500.png", alt: "Semisto")
 
-          = yield :header
+          .auth__main
+            - if content_for?(:title)
+              h1 = yield :title
 
-          = render "layouts/components/messages"
+            = render "layouts/components/messages"
 
-          = yield
+            = yield
 
-          .spacer--vertical--3
+          - if content_for?(:footer)
+            .auth__footer
+              = yield :footer

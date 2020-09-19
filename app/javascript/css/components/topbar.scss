@@ -1,0 +1,25 @@
+@mixin component-topbar {
+  .top-bar {
+    justify-content: space-between;
+    font-weight: $global-weight-bold;
+
+    &__left {
+
+    }
+
+    &__center {
+
+    }
+
+    &__right {
+
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        background: none;
+      }
+    }
+  }
+}

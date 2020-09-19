@@ -3,31 +3,31 @@
 - content_for :header do
   h2 = _("Welcome, silvaner.")
 
-.card
-  .card-section
-    = simple_form_for resource,
-                      as: resource_name,
-                      url: session_path(resource_name),
-                      data: { abide: true } do |f|
-      = f.input :login,
-                required: true,
-                autofocus: true,
-                label: _("Username"),
-                input_html: { autocomplete: "username" },
-                error: _("Please provide your username or email")
+= simple_form_for resource,
+                  as: resource_name,
+                  url: session_path(resource_name),
+                  data: { abide: true } do |f|
+  = f.input :login,
+            required: true,
+            autofocus: true,
+            label: _("Username"),
+            placeholder: _("Username"),
+            input_html: { autocomplete: "username" },
+            error: _("Please provide your username or email")
 
-      = f.input :password,
-                required: true,
-                label: _("Password"),
-                error: _("Please provide your password"),
-                input_html: { autocomplete: "current-password" }
+  = f.input :password,
+            required: true,
+            label: _("Password"),
+            placeholder: _("Password"),
+            error: _("Please provide your password"),
+            input_html: { autocomplete: "current-password" }
 
-      = f.input :remember_me,
-                as: :boolean,
-                wrapper: :foundation_checkbox,
-                label: _("Remember me"),
-                required: false if devise_mapping.rememberable?
+  = f.input :remember_me,
+            as: :boolean,
+            wrapper: :foundation_checkbox,
+            label: _("Remember me"),
+            required: false if devise_mapping.rememberable?
 
-      = f.button :submit, _("Log In")
+  = f.button :submit, _("Log In")
 
 = render "devise/shared/links"

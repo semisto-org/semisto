@@ -11,7 +11,7 @@
       - @forest.plants.each do |plant|
         tr
           td
-            = link_to plant.name,
+            = link_to plant.common_name,
                       forest_plant_path(@forest, plant)
           td TODO
 - else
@@ -19,6 +19,6 @@
 
 <br>
 
-= link_to _("Add a plant to this forest garden"),
+= link_to _("Add a plant to this project"),
           new_forest_plant_path(@forest),
           class: "hollow primary button"

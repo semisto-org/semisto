@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @plant.name %>
-</p>
-
-<p>
   <strong>Common name:</strong>
   <%= @plant.common_name %>
 </p>
 
-<%= link_to 'Edit', edit_plant_path(@plant) %> |
-<%= link_to 'Back', plants_path %>
+<%= link_to 'Edit', edit_forest_plant_path(@forest, @plant) %> |
+<%= link_to 'Back', forest_plants_path(@forest) %>

@@ -43,8 +43,16 @@
 // @include foundation-float-classes;
 @include foundation-flex-classes;
 
-@import './layout';
+@import './layouts/app';
+@import './layouts/auth';
 
 @import './components/form';
+@import './components/topbar';
+@import './components/utils';
 
-@include silvaners-form;
+@include layout-app;
+@include layout-auth;
+
+@include component-form;
+@include component-topbar;
+@include component-utils;

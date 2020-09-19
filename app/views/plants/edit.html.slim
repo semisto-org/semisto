@@ -1,0 +1,9 @@
+- content_for :header, "Edit Plant Details"
+
+= simple_form_for @plant,
+                  url: forest_plant_path(@forest, @plant) do |f|
+  = render "form", f: f
+  = f.button :submit
+
+= link_to 'Show', forest_plant_path(@forest, @plant)
+= link_to 'Back', forest_plants_path(@forest)

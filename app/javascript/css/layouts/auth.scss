@@ -1,0 +1,25 @@
+@mixin layout-auth {
+  .auth {
+    margin: $global-margin 0;
+
+    &__header {
+      margin: 1rem 0;
+      margin-bottom: $global-margin;
+      text-align: center;
+
+      &__logo {
+        img {
+          height: 175px;
+        }
+      }
+    }
+
+    &__main {
+      margin-bottom: $global-margin;
+    }
+
+    &__footer {
+      font-size: $small-font-size;
+    }
+  }
+}

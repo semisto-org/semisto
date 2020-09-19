@@ -1,14 +1,14 @@
-- content_for :header do
-  h1 = _("Forests")
+.grid-x.grid-margin-x
+  - @forests.each do |forest|
+    .cell.small-6.medium-4.large-4
+      .card
+        .card-divider
+          h3 = link_to forest.name, forest
+        .card-section
+          .small.button-group
+            = link_to _("View"), forest_path(forest), class: "hollow secondary button"
+            = link_to _("Edit"), edit_forest_path(forest), class: "hollow secondary button"
 
-- @forests.each do |forest|
-  .card
-    .card-divider
-      h3 = link_to forest.name, forest
-    .card-section
-      .button-group
-        = link_to _("Edit"), edit_forest_path(forest), class: "small hollow secondary button"
-
-= link_to _("Add a forest"),
+= link_to _("New project"),
           new_forest_path,
-          class: "hollow primary button"
+          class: "hollow secondary button"
