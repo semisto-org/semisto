@@ -12,5 +12,5 @@
 class Plant < ApplicationRecord
   belongs_to :forest
 
-  validates :name, presence: true
+  validates :common_name, presence: true
 end

@@ -1,0 +1,24 @@
+- content_for :header do
+  h1 = _("Plants")
+
+- if @forest.plants.any?
+  table
+    thead
+      th Name
+      th Botanical name
+      th &nbsp;
+    tbody
+      - @forest.plants.each do |plant|
+        tr
+          td
+            = link_to plant.name,
+                      forest_plant_path(@forest, plant)
+          td TODO
+- else
+  = _("No plants yet. Add one below.")
+
+<br>
+
+= link_to _("Add a plant to this forest garden"),
+          new_forest_plant_path(@forest),
+          class: "hollow primary button"
