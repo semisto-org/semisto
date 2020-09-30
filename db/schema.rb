@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_204721) do
+ActiveRecord::Schema.define(version: 2020_09_30_045144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,9 @@ ActiveRecord::Schema.define(version: 2020_08_23_204721) do
     t.decimal "latitude"
     t.decimal "longitude"
     t.jsonb "drawn_items"
+    t.bigint "user_id"
     t.index ["latitude", "longitude"], name: "index_forests_on_latitude_and_longitude"
+    t.index ["user_id"], name: "index_forests_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -54,5 +56,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_204721) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "forests", "users"
   add_foreign_key "plants", "forests"
 end

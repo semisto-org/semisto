@@ -11,5 +11,6 @@
 #  drawn_items :jsonb
 #
 class Forest < ApplicationRecord
+  belongs_to :user
   has_many :plants
 end

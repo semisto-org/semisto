@@ -2,21 +2,21 @@ class ForestsController < ApplicationController
   before_action :set_forest, only: [:show, :edit, :update, :destroy]
 
   def index
-    @forests = Forest.all
+    @forests = current_user.forests.all
   end
 
   def show
   end
 
   def new
-    @forest = Forest.new
+    @forest = current_user.forests.new
   end
 
   def edit
   end
 
   def create
-    @forest = Forest.new(forest_params)
+    @forest = current_user.forests.new(forest_params)
 
     respond_to do |format|
       if @forest.save
@@ -58,7 +58,7 @@ class ForestsController < ApplicationController
   private
 
   def set_forest
-    @forest = Forest.find(params[:id])
+    @forest = current_user.forests.find(params[:id])
   end
 
   def forest_params
